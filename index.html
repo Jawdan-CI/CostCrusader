@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ----------------------------------------------HEAD -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +13,18 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>CostCrusader - Conquer Your Travel Budget</title>
 </head>
+
+<!-- ----------------------------------------------BODY -->
+
 <body>
-    <header>
-        <h1 class="logo">CostCrusader</h1>
-        <p>Plan your dream trip whatever the cost!</p>
+<!-- ------------HEADER -->
+    <header class="bg-primary">
+        <h3 class="logo text-primary">CostCrusader</h1>
+        <span class="muted">Plan your dream trip whatever the cost!</span>
     </header>
+<!-- ------------MAIN CONTENT -->
     <main>
+<!-- Choose Your Budget Form -->
         <form id="trip-form">
             <label for="budget">Travel Budget: £</label>
             <input type="number" id="budget" name="budget" placeholder="Enter your budget">
@@ -23,10 +32,21 @@
             <button type="button" id="no-budget-btn">No Budget</button>
         </form>
 
+<!-- ------------MAIN FORM -->
+        <form class="hidden" id="main-form">
+
+            <h
+            <label for="destination"></label>
+
+        </form>
+
+<!-- ------------RESULTS -->
         <div class="results">
 
         </div>
     </main>
+
+<!-- ----------------------------------------------SCRIPTS -->
 
     <script src="assets/scripts/script.js"></script>
 </body>

@@ -50,7 +50,36 @@
     font-style: italic;
 }
 
-/* Source Sans 3 */
+/* ---------------------------------------COLOR CLASSES */
+
+.bg-primary {
+background-color: #2980b9; /* Deep blue - Can be used for main background or header */ 
+}
+
+.bg-secondary {
+background-color: #3498db; /* Lighter blue - For sections or highlights */
+}
+
+.bg-accent {
+background-color: #e74c3c; /* Vibrant red - For buttons or call-to-action elements */
+}
+
+.bg-dark {
+background-color: #2c3e50; /* Dark gray - For footer or contrasting elements */
+}
+
+/* Font Colors */
+.text-primary {
+color: #ecf0f1; /* Light gray - Works well on dark backgrounds */
+}
+
+.text-secondary {
+color: #34495e; /* Dark gray - For body text on light backgrounds */
+}
+
+.text-accent {
+color: #f39c12; /* Bright orange - For highlights or links */
+}
 
 /* ---------------------------------------GENERAL STYLING */
 
@@ -63,5 +92,31 @@
 
 .upper {
     text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.muted {
+    font-family: 'Source Sans 3';
+    font-weight: 100;
+}
+
+header {
+    display: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+header span {
+    font-size: 1.2rem;
 }
 
