@@ -1,0 +1,219 @@
+/* ---------------------------------------FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Merriweather */
+.merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+  
+.merriweather-light-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+  
+.merriweather-regular-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.merriweather-bold-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+  
+.merriweather-black-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ---------------------------------------COLOR CLASSES */
+
+.bg-primary {
+background-color: #2980b9; /* Deep blue - Can be used for main background or header */ 
+}
+
+.bg-secondary {
+background-color: #3498db; /* Lighter blue - For sections or highlights */
+}
+
+.bg-accent {
+background-color: #e74c3c; /* Vibrant red - For buttons or call-to-action elements */
+}
+
+.bg-dark {
+background-color: #2c3e50; /* Dark gray - For footer or contrasting elements */
+}
+
+/* Font Colors */
+.text-primary {
+color: #ecf0f1; /* Light gray - Works well on dark backgrounds */
+}
+
+.text-secondary {
+color: #34495e; /* Dark gray - For body text on light backgrounds */
+}
+
+.text-accent {
+color: #f39c12; /* Bright orange - For highlights or links */
+}
+
+/* ---------------------------------------GENERAL STYLING */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Placeholders */
+
+::placeholder {
+    color:lightblue;
+    opacity: 1;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.muted {
+    font-family: 'Source Sans 3';
+    font-weight: 100;
+    padding-bottom: 1rem;
+}
+
+.separator {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: white;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+    z-index: 9;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+header span {
+    font-size: 1.2rem;
+}
+
+header > * {
+    margin-left: 15px;
+    padding-top: 10px;
+}
+
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: center / cover no-repeat url('../images/background.jpg');
+    background-attachment: fixed;
+    height: 100vh;
+    z-index: 8;
+}    
+#trip-form {
+    position: relative;
+    max-width: 850px;
+    margin: 10rem 1rem 1.5rem 1rem;
+    padding: 2rem 2rem 2.5rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+    max-height: 600px;
+}
+
+#trip-form > * {
+    position: relative;
+    margin-top: 2rem;
+}
+
+#trip-form > label {
+    font-size: 4rem;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-stretch: wider;
+}
+
+#trip-form > input {
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(200, 0, 0, 0.5);
+    border-radius: 15px;
+    border-color: #e74c3c;
+    border-style: none;
+    padding: 2rem 1rem 0rem 1rem;
+    margin-top: 0 !important;
+}
+
+#trip-form > .sign {
+    font-size: 4rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-stretch: wider;
+}
+
+#trip-form > p {
+    padding-bottom: 1rem;
+}
+
+#yes-budget-btn,
+#no-budget-btn {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ff1f07;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 2rem;
+    max-width: 80%;
+    width: 100%;
+}
+
+#yes-budget-btn:hover,
+#no-budget-btn:hover {
+    background-color: #c81002;
+    cursor: pointer; 
+    transform: scale(1.05); 
+    transition: all 0.3s ease; 
+}
