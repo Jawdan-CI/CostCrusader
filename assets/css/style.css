@@ -90,6 +90,13 @@ color: #f39c12; /* Bright orange - For highlights or links */
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Placeholders */
+
+::placeholder {
+    color:lightblue;
+    opacity: 1;
+}
+
 .upper {
     text-transform: uppercase;
 }
@@ -101,6 +108,13 @@ color: #f39c12; /* Bright orange - For highlights or links */
 .muted {
     font-family: 'Source Sans 3';
     font-weight: 100;
+    padding-bottom: 1rem;
+}
+
+.separator {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: white;
 }
 
 header {
@@ -120,3 +134,78 @@ header span {
     font-size: 1.2rem;
 }
 
+header > * {
+    margin-left: 15px;
+    padding-top: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#trip-form {
+    position: relative;
+    max-width: 850px;
+    margin: 5rem 1rem 1.5rem 1rem;
+    padding: 2rem 2rem 2.5rem 2rem;
+    border-radius: 25px;
+    text-align: center;
+}
+
+#trip-form > * {
+    position: relative;
+    margin-top: 2rem;
+}
+
+#trip-form > label {
+    font-size: 4rem;
+    font-family: Montserrat;
+    font-weight: 900;
+    font-stretch: wider;
+}
+
+#trip-form > input {
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: rgba(200, 0, 0, 0.5);
+    border-radius: 15px;
+    border-color: #e74c3c;
+    border-style: none;
+    padding: 2rem 1rem 0rem 1rem;
+    margin-top: 0 !important;
+}
+
+#trip-form > .sign {
+    font-size: 4rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-stretch: wider;
+}
+
+#trip-form > p {
+    padding-bottom: 1rem;
+}
+
+#yes-budget-btn,
+#no-budget-btn {
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ff1f07;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 2rem;
+    max-width: 80%;
+    width: 100%;
+}
+
+#yes-budget-btn:hover,
+#no-budget-btn:hover {
+    background-color: #c81002;
+    cursor: pointer; 
+    transform: scale(1.05); 
+    transition: all 0.3s ease; 
+}

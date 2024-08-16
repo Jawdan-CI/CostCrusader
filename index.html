@@ -25,11 +25,14 @@
 <!-- ------------MAIN CONTENT -->
     <main>
 <!-- Choose Your Budget Form -->
-        <form id="trip-form">
-            <label for="budget">Travel Budget: £</label>
-            <input type="number" id="budget" name="budget" placeholder="Enter your budget">
-
-            <button type="button" id="no-budget-btn">No Budget</button>
+        <form id="trip-form" class="bg-secondary">
+            <label for="budget" class="upper text-primary">Travel Budget:</label>
+            <br><span class="sign text-primary">£ </span><input type="text" id="budget" name="budget" placeholder="00.00" required>
+            <br>
+            <button type="button" id="yes-budget-btn" class="upper text-primary">Go</button>
+            <br>
+            <p class="separator">_______________________________</p>
+            <button type="button" id="no-budget-btn" class="upper text-primary">No Budget</button>
         </form>
 
 <!-- ------------MAIN FORM -->
