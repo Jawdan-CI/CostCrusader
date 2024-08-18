@@ -91,6 +91,9 @@ color: #f39c12; /* Bright orange - For highlights or links */
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     overflow-x: hidden;
     background-image: url('../images/background.jpg'); 
     background-attachment: fixed; 
@@ -148,12 +151,19 @@ header > * {
     padding-top: 10px;
 }
 
+#main-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
 main {
     position: relative;
-    top: 0;
-    left: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    top: 10rem;
+    left: 0;
     height: 100vh;
     z-index: 8;
 }    
@@ -226,15 +236,18 @@ main {
 
 /* ... your existing CSS ... */
 
-#main-form {
-    margin-top: 10rem;
-    display: flex; 
-    flex-direction: column; 
-    background-color: rgba(223, 0, 0, 0.8); 
-    padding: 2rem; 
-    border-radius: 25px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+.destinations-card,
+.transport-card,
+.accomodation-card,
+.lifestyle-card {
+    margin-top: 2rem;
+    background-color: #c0392b;
+    padding: 2rem;
+    border-radius: 25px;
+    max-width: 800px;
 }
+
+
 
 #main-form h2 {
     margin-top: 2rem;
@@ -266,13 +279,6 @@ main {
     font-weight: bold;
 }
 
-.lifestyle-section {
-    margin-top: 1.5rem;
-    background-color: #c0392b;
-    padding: 2rem;
-    border-radius: 25px;
-}
-
 fieldset {
     border: 1px solid #ccc;
     padding: 2rem;
@@ -301,4 +307,20 @@ legend {
 
 #main-form button[type="submit"]:hover {
     background-color: #c0392b;
+}
+
+footer {
+    position: relative;
+    top: 1000px;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    background-color: #2980b9;
+}
+
+.form-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
 }

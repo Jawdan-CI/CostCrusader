@@ -38,13 +38,15 @@
         
 
 <!-- ------------MAIN FORM -->
-        <form class="bg-secondary" id="main-form">
-            <div class="destinations-card">
+<div class="form-footer-wrapper">
+        <form id="main-form">
                 
-                <div id="budget-display" class="text-primary"></div> 
+            <div id="budget-display" class="text-primary"></div> 
 
+            <div class="destinations-card">
                 <h2 class="upper text-primary">Destinations</h2>
                 <div class="form-section">
+                    <h3 class="upper text-primary">Trip Type</h3>
                     <label for="trip-type" class="upper text-primary">Single Trip or Round Trip?</label>
                     <select id="trip-type" name="trip-type">
                         <option value="single">Single Trip</option>
@@ -64,35 +66,38 @@
                 <label for="to" class="upper text-primary">To:</label>
                 <input type="text" id="to" name="to" placeholder="Enter your destination">
                 </div>
+            </div>
+
+            <div class="transport-card">
+                <h2 class="upper text-primary">Transport</h2>
+                
+                <div class="form-section">
+                <label for="travel-mode" class="upper text-primary">Mode of Transport:</label>
+                <select id="travel-mode" name="travel-mode">
+                    <option value="flight">Flight</option>
+                    <option value="train">Train</option>
+                    <option value="car">Car</option>
+                </select>
+                </div>
             
-                <h2 class="upper text-primary">Trip Type</h2>
-            
+                <div id="fuel-calculator" style="display: none;"> 
+                </div>
             </div>
-            <h2 class="upper text-primary">Transport</h2>
-        
-            <div class="form-section">
-            <label for="travel-mode" class="upper text-primary">Mode of Transport:</label>
-            <select id="travel-mode" name="travel-mode">
-                <option value="flight">Flight</option>
-                <option value="train">Train</option>
-                <option value="car">Car</option>
-            </select>
-            </div>
-        
-            <div id="fuel-calculator" style="display: none;"> 
-            </div>
-        
+
+            <div class="accomodation-card">
             <h2 class="upper text-primary">Accommodation</h2>
         
             <div class="form-section">
-            <label for="accommodation" class="upper text-primary">Type of Accommodation:</label>
-            <select id="accommodation" name="accommodation">
-                <option value="hotel">Hotel</option>
-                <option value="hostel">Hostel</option>
-                <option value="airbnb">Airbnb</option>
-            </select>
+                <label for="accommodation" class="upper text-primary">Type of Accommodation:</label>
+                <select id="accommodation" name="accommodation">
+                    <option value="hotel">Hotel</option>
+                    <option value="hostel">Hostel</option>
+                    <option value="airbnb">Airbnb</option>
+                </select>
+                </div>
             </div>
-            <div class="lifestyle-section">
+
+            <div class="lifestyle-card">
             <h2 class="upper text-primary">Lifestyle</h2>
         
             <fieldset>
@@ -126,7 +131,10 @@
 
         </div>
     </main>
-
+    <footer>
+        1
+    </footer>
+</div>
 <!-- ----------------------------------------------SCRIPTS -->
 
     <script src="assets/scripts/script.js"></script>
