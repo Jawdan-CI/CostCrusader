@@ -19,7 +19,7 @@
 <body>
 <!-- ------------HEADER -->
     <header class="bg-primary">
-        <h3 class="logo text-primary">CostCrusader</h1>
+        <h4 class="logo text-primary">CostCrusader</h1>
         <span class="muted">Plan your dream trip whatever the cost!</span>
     </header>
 <!-- ------------MAIN CONTENT -->
@@ -59,12 +59,12 @@
                     </div>
                     <div id="date-inputs">
                         <div class="dates-section">
-                            <div class="form-section">
+                            <div class="mg-r">
                                 <label for="departure-date" class="upper text-primary">Departure Date:</label>
                                 <input type="date" id="departure-date" name="departure-date">
                             </div>
                     
-                            <div class="form-section" id="return-date-input" style="display: none;">
+                            <div class="" id="return-date-input" style="display: none;">
                                 <label for="return-date" class="upper text-primary">Return Date:</label>
                                 <input type="date" id="return-date" name="return-date">
                             </div>
@@ -74,8 +74,8 @@
                     
                 <div id="date-inputs">
                 </div>
-                
                 <div class="form-section">
+                    <h3 class="upper text-primary">Where</h3>
                     <label for="from" class="upper text-primary">From:</label>
                     <input type="text" id="from" name="from" placeholder="Enter your starting point">
                 </div>
@@ -97,19 +97,28 @@
                 <div class="form-section">
                     <label for="travel-mode" class="upper text-primary">Mode of Transport:</label>
                     <div class="row-container">
-                        <div>
+                        <div class="transport-radio">
                             <input type="radio" id="travel-mode-flight" name="travel-mode" value="flight" checked>
-                            <label for="travel-mode-flight">Flight</label>
+                            <label for="travel-mode-flight">
+                                <span class="upper">Flight</span>
+                                <span><i class="fas fa-plane fa-xl"></i></span> 
+                            </label>
                         </div>
                     
-                        <div>
+                        <div class="transport-radio">
                             <input type="radio" id="travel-mode-train" name="travel-mode" value="train">
-                            <label for="travel-mode-train">Train</label>
+                            <label for="travel-mode-train">
+                                <span class="upper">Train</span>
+                                <span><i class="fas fa-train fa-xl"></i></span> 
+                            </label>
                         </div>
                     
-                        <div>
+                        <div class="transport-radio">
                             <input type="radio" id="travel-mode-car" name="travel-mode" value="car">
-                            <label for="travel-mode-car">Car</label>
+                            <label for="travel-mode-car">
+                                <span class="upper">Car</span>
+                                <span><i class="fas fa-car fa-xl"></i></span> 
+                            </label>
                         </div>
                     </div>
                 </div>

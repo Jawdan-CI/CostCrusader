@@ -101,6 +101,36 @@ body {
     background-position: center; 
 }
 
+label,
+legend {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+legend {
+    background-color: rgb(88, 0, 0);
+    border-radius: 10px;
+    border: 1px solid yellow;
+}
+
+h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.5rem;
+    background-color: #8800009d;
+    border: 15px;
+    width:fit-content;
+    border-radius: 25px;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+}
+
+input {
+    border-radius: 5px;
+}
+
 /* Placeholders */
 
 ::placeholder {
@@ -254,6 +284,7 @@ main {
 .form-section {
     margin-bottom: 1.5rem; 
     color: #34495e;
+    padding: 2rem 2rem;
 }
 
 #main-form label {
@@ -306,7 +337,7 @@ legend {
 
 footer {
     position: relative;
-    top: 1500px;
+    top: 2000px;
     bottom: 0;
     left: 0;
     height: 10vh;
@@ -325,7 +356,6 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     color: white;
-    background-color: rgb(250, 80, 80);
     padding: 0.5rem 0.2rem;
     border-radius: 15px;
     margin-top: 0.5rem;
@@ -337,12 +367,16 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     color: white;
-    background-color: rgb(250, 80, 80);
-    padding: 0.5rem 0.2rem;
+    background-color: none;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
     border-radius: 15px;
     margin-top: 0.5rem;
     background-color: #c0392b;
     text-align: center;
+}
+
+.dates-section>div {
+    margin: 0;
 }
 
 #trip-type-section {
@@ -356,6 +390,21 @@ footer {
 
 .form-section {
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(85, 0, 0);
+    padding: 1rem;
+    border-radius: 25px;
+}
+
+.transport-radio label>span {
+    padding: 0 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .accomodation-radio label>span{
@@ -380,16 +429,21 @@ footer {
     font-weight: bold;
 }
 
+#return-date-input {
+    margin-left: 1.5rem;
+}
+
 #custom,
 #others {
     color: white;
     background-color: rgb(250, 80, 80);
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 15px;
     text-align: center;
     font-weight: bold;
 
 }
+
 
 #calculate-button {
     margin-top: 2rem;
