@@ -241,8 +241,8 @@ main {
     background-color: #c0392b;
     padding: 2rem;
     border-radius: 25px;
-    width: 100%;
-    max-width: 850px;
+    width: 850px;
+    max-width: 1000px;
 }
 
 
