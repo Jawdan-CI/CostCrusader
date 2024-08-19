@@ -104,7 +104,8 @@ body {
 /* Placeholders */
 
 ::placeholder {
-    color:lightblue;
+    color:black;
+    text-shadow: -1px -1px 2px yellow;
     opacity: 1;
 }
 
@@ -234,7 +235,6 @@ main {
     transition: all 0.3s ease; 
 }
 
-/* ... your existing CSS ... */
 
 .card {
     margin-top: 2rem;
@@ -329,6 +329,20 @@ footer {
     padding: 0.5rem 0.2rem;
     border-radius: 15px;
     margin-top: 0.5rem;
+}
+
+.dates-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    background-color: rgb(250, 80, 80);
+    padding: 0.5rem 0.2rem;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+    background-color: #c0392b;
+    text-align: center;
 }
 
 #trip-type-section {

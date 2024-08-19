@@ -49,12 +49,25 @@
                     <h3 class="upper text-primary">Trip Type</h3>
                     <div class="row-container">
                         <div class="radio-button">
-                            <input type="radio" name="trip-type" id="trip-type-single" value="single" checked>
+                            <input type="radio" name="trip-type" id="trip-type-single" value="single" placeholder="Enter your Start Point" checked>
                             <label for="trip-type-single" class="upper">Single Trip</label>
                         </div>
                         <div class="radio-button">
-                            <input type="radio" name="trip-type" id="trip-type-round" value="single">
+                            <input type="radio" name="trip-type" id="trip-type-round" value="single" placeholder="Enter your Destination">
                             <label for="trip-type-round" class="upper">Round Trip</label>
+                        </div>
+                    </div>
+                    <div id="date-inputs">
+                        <div class="dates-section">
+                            <div class="form-section">
+                                <label for="departure-date" class="upper text-primary">Departure Date:</label>
+                                <input type="date" id="departure-date" name="departure-date">
+                            </div>
+                    
+                            <div class="form-section" id="return-date-input" style="display: none;">
+                                <label for="return-date" class="upper text-primary">Return Date:</label>
+                                <input type="date" id="return-date" name="return-date">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,7 +189,7 @@
                         </div>
                     </div>
                     <div class="radio-button" id="custom">
-                        <input type="radio" id="food-custom" name="food" value="custom">
+                        <input type="radio" id="food-custom" name="food" value="custom" placeholder="0.00">
                         <label for="food-custom" class="upper">Custom: ~£</label>
                         <input type="text" id="food-custom-amount" name="food-custom-amount">
                     </div>
@@ -184,7 +197,7 @@
             
                 <div class="form-section" id="others">
                     <label for="souvenirs-budget" class="upper text-primary">Souvenirs & Other Expenditures (per day): £</label>
-                    <input type="number" id="souvenirs-budget" name="souvenirs-budget" min="0" value="0">
+                    <input type="text" id="souvenirs-budget" name="souvenirs-budget" min="0" value="0" placeholder="0.00">
                 </div>
             </div>
         
