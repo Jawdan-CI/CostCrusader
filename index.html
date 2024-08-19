@@ -23,7 +23,8 @@
         <span class="muted">Plan your dream trip whatever the cost!</span>
     </header>
 <!-- ------------MAIN CONTENT -->
-    <main>
+    
+        <main>
 <!-- Choose Your Budget Form -->
         <form id="trip-form" class="hidden bg-secondary">
             <label for="budget" class="upper text-primary">Travel Budget:</label>
@@ -38,190 +39,189 @@
         
 
 <!-- ------------MAIN FORM -->
-<div class="form-footer-wrapper">
-        <form id="main-form">
-                
-            <div id="budget-display" class="text-primary"></div> 
+            <form id="main-form">
+                    
+                <div id="budget-display" class="text-primary"></div> 
 
-            <div class="card">
-                <h2 class="upper text-primary">Destinations</h2>
-                <div class="form-section">
-                    <h3 class="upper text-primary">Trip Type</h3>
-                    <div class="row-container">
-                        <div class="radio-button">
-                            <input type="radio" name="trip-type" id="trip-type-single" value="single" placeholder="Enter your Start Point" checked>
-                            <label for="trip-type-single" class="upper">Single Trip</label>
+                <div class="card">
+                    <h2 class="upper text-primary">Destinations</h2>
+                    <div class="form-section">
+                        <h3 class="upper text-primary">Trip Type</h3>
+                        <div class="row-container">
+                            <div class="radio-button">
+                                <input type="radio" name="trip-type" id="trip-type-single" value="single" placeholder="Enter your Start Point" checked>
+                                <label for="trip-type-single" class="upper">Single Trip</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="trip-type" id="trip-type-round" value="single" placeholder="Enter your Destination">
+                                <label for="trip-type-round" class="upper">Round Trip</label>
+                            </div>
                         </div>
-                        <div class="radio-button">
-                            <input type="radio" name="trip-type" id="trip-type-round" value="single" placeholder="Enter your Destination">
-                            <label for="trip-type-round" class="upper">Round Trip</label>
+                        <div id="date-inputs">
+                            <div class="dates-section">
+                                <div class="mg-r">
+                                    <label for="departure-date" class="upper text-primary">Departure Date:</label>
+                                    <input type="date" id="departure-date" name="departure-date">
+                                </div>
+                        
+                                <div class="" id="return-date-input" style="display: none;">
+                                    <label for="return-date" class="upper text-primary">Return Date:</label>
+                                    <input type="date" id="return-date" name="return-date">
+                                </div>
+                            </div>
                         </div>
                     </div>
+                        
                     <div id="date-inputs">
-                        <div class="dates-section">
-                            <div class="mg-r">
-                                <label for="departure-date" class="upper text-primary">Departure Date:</label>
-                                <input type="date" id="departure-date" name="departure-date">
-                            </div>
-                    
-                            <div class="" id="return-date-input" style="display: none;">
-                                <label for="return-date" class="upper text-primary">Return Date:</label>
-                                <input type="date" id="return-date" name="return-date">
-                            </div>
-                        </div>
                     </div>
-                </div>
-                    
-                <div id="date-inputs">
-                </div>
-                <div class="form-section">
-                    <h3 class="upper text-primary">Where</h3>
-                    <label for="from" class="upper text-primary">From:</label>
-                    <input type="text" id="from" name="from" placeholder="Enter your starting point">
-                </div>
-            
-                <div class="form-section">
-                    <label for="to" class="upper text-primary">To:</label>
-                    <input type="text" id="to" name="to" placeholder="Enter your destination">
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 class="upper text-primary">Transport</h2>
+                    <div class="form-section">
+                        <h3 class="upper text-primary">Where</h3>
+                        <label for="from" class="upper text-primary">From:</label>
+                        <input type="text" id="from" name="from" placeholder="Enter your starting point">
+                    </div>
                 
-                <div class="form-section">
-                    <label for="travelers" class="upper text-primary">Number of Travelers:</label>
-                    <input type="number" id="travelers" name="travelers" min="1" value="1">
+                    <div class="form-section">
+                        <label for="to" class="upper text-primary">To:</label>
+                        <input type="text" id="to" name="to" placeholder="Enter your destination">
+                    </div>
                 </div>
 
-                <div class="form-section">
-                    <label for="travel-mode" class="upper text-primary">Mode of Transport:</label>
-                    <div class="row-container">
-                        <div class="transport-radio">
-                            <input type="radio" id="travel-mode-flight" name="travel-mode" value="flight" checked>
-                            <label for="travel-mode-flight">
-                                <span class="upper">Flight</span>
-                                <span><i class="fas fa-plane fa-xl"></i></span> 
-                            </label>
-                        </div>
+                <div class="card">
+                    <h2 class="upper text-primary">Transport</h2>
                     
-                        <div class="transport-radio">
-                            <input type="radio" id="travel-mode-train" name="travel-mode" value="train">
-                            <label for="travel-mode-train">
-                                <span class="upper">Train</span>
-                                <span><i class="fas fa-train fa-xl"></i></span> 
-                            </label>
+                    <div class="form-section">
+                        <label for="travelers" class="upper text-primary">Number of Travelers:</label>
+                        <input type="number" id="travelers" name="travelers" min="1" value="1">
+                    </div>
+
+                    <div class="form-section">
+                        <label for="travel-mode" class="upper text-primary">Mode of Transport:</label>
+                        <div class="row-container">
+                            <div class="transport-radio">
+                                <input type="radio" id="travel-mode-flight" name="travel-mode" value="flight" checked>
+                                <label for="travel-mode-flight">
+                                    <span class="upper">Flight</span>
+                                    <span><i class="fas fa-plane fa-xl"></i></span> 
+                                </label>
+                            </div>
+                        
+                            <div class="transport-radio">
+                                <input type="radio" id="travel-mode-train" name="travel-mode" value="train">
+                                <label for="travel-mode-train">
+                                    <span class="upper">Train</span>
+                                    <span><i class="fas fa-train fa-xl"></i></span> 
+                                </label>
+                            </div>
+                        
+                            <div class="transport-radio">
+                                <input type="radio" id="travel-mode-car" name="travel-mode" value="car">
+                                <label for="travel-mode-car">
+                                    <span class="upper">Car</span>
+                                    <span><i class="fas fa-car fa-xl"></i></span> 
+                                </label>
+                            </div>
                         </div>
-                    
-                        <div class="transport-radio">
-                            <input type="radio" id="travel-mode-car" name="travel-mode" value="car">
-                            <label for="travel-mode-car">
-                                <span class="upper">Car</span>
-                                <span><i class="fas fa-car fa-xl"></i></span> 
-                            </label>
+                    </div>
+                
+                    <div id="fuel-calculator" style="display: none;"> 
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="upper text-primary">Accommodation</h2>
+                    <div class="form-section">
+                        <label class="upper text-primary">Type of Accommodation:</label>
+                        <div class="row-container">
+
+                            <div class="accomodation-radio">
+                                <input type="radio" id="accommodation-hotel" name="accommodation" value="hotel" checked>
+                                <label for="accommodation-hotel">
+                                    <span class="upper">Hotel</span>
+                                    <span><i class="fas fa-hotel fa-xl"></i></span> 
+                                </label> 
+                            </div>
+
+                            <div class="accomodation-radio">
+                                <input type="radio" id="accommodation-hostel" name="accommodation" value="hostel">
+                                <label for="accommodation-hostel">
+                                    <span class="upper">Hostel</span>
+                                    <span><i class="fas fa-bed fa-xl"></i></span>
+                                </label> 
+                            </div>
+
+                            <div class="accomodation-radio">
+                                <input type="radio" id="accommodation-airbnb" name="accommodation" value="airbnb">
+                                <label for="accommodation-airbnb">
+                                    <span class="upper">Airbnb</span>
+                                    <span><i class="fab fa-airbnb fa-xl"></i></span> 
+                                </label> 
+                            </div>
+
+                            <div class="accomodation-radio">
+                                <input type="radio" id="accommodation-camping" name="accommodation" value="camping">
+                                <label for="accommodation-camping">
+                                    <span class="upper">Camping</span>
+                                    <span><i class="fas fa-campground fa-xl"></i></span>
+                                </label> 
+                            </div>
+
+                            <div class="accomodation-radio">
+                                <input type="radio" id="accommodation-wild-camping" name="accommodation" value="wild-camping">
+                                <label for="accommodation-wild-camping">
+                                    <span class="upper">Wild Camping</span>
+                                    <span><i class="fas fa-tree fa-xl"></i></span>
+                                </label> 
+                            </div>
                         </div>
                     </div>
                 </div>
-            
-                <div id="fuel-calculator" style="display: none;"> 
-                </div>
-            </div>
 
-            <div class="card">
-                <h2 class="upper text-primary">Accommodation</h2>
-                <div class="form-section">
-                    <label class="upper text-primary">Type of Accommodation:</label>
-                    <div class="row-container">
 
-                        <div class="accomodation-radio">
-                            <input type="radio" id="accommodation-hotel" name="accommodation" value="hotel" checked>
-                            <label for="accommodation-hotel">
-                                <span class="upper">Hotel</span>
-                                <span><i class="fas fa-hotel fa-xl"></i></span> 
-                            </label> 
+                <div class="card">
+                    <h2 class="upper text-primary">Lifestyle</h2>
+                
+                    <fieldset class="form-section">
+                        <legend class="upper text-primary">Food Budget (per day per person):</legend>
+                        <div class="row-container mg-b">
+                            <div class="radio-button">
+                                <input type="radio" id="food-low" name="food" value="low">
+                                <label for="food-low" class="upper">Low</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" id="food-medium" name="food" value="medium">
+                                <label for="food-medium" class="upper">Medium</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" id="food-high" name="food" value="high">
+                                <label for="food-high" class="upper">High</label> 
+                            </div>
                         </div>
-
-                        <div class="accomodation-radio">
-                            <input type="radio" id="accommodation-hostel" name="accommodation" value="hostel">
-                            <label for="accommodation-hostel">
-                                <span class="upper">Hostel</span>
-                                <span><i class="fas fa-bed fa-xl"></i></span>
-                            </label> 
+                        <div class="radio-button" id="custom">
+                            <input type="radio" id="food-custom" name="food" value="custom" placeholder="0.00">
+                            <label for="food-custom" class="upper">Custom: ~£</label>
+                            <input type="text" id="food-custom-amount" name="food-custom-amount">
                         </div>
-
-                        <div class="accomodation-radio">
-                            <input type="radio" id="accommodation-airbnb" name="accommodation" value="airbnb">
-                            <label for="accommodation-airbnb">
-                                <span class="upper">Airbnb</span>
-                                <span><i class="fab fa-airbnb fa-xl"></i></span> 
-                            </label> 
-                        </div>
-
-                        <div class="accomodation-radio">
-                            <input type="radio" id="accommodation-camping" name="accommodation" value="camping">
-                            <label for="accommodation-camping">
-                                <span class="upper">Camping</span>
-                                <span><i class="fas fa-campground fa-xl"></i></span>
-                            </label> 
-                        </div>
-
-                        <div class="accomodation-radio">
-                            <input type="radio" id="accommodation-wild-camping" name="accommodation" value="wild-camping">
-                            <label for="accommodation-wild-camping">
-                                <span class="upper">Wild Camping</span>
-                                <span><i class="fas fa-tree fa-xl"></i></span>
-                            </label> 
-                        </div>
+                    </fieldset>
+                
+                    <div class="form-section" id="others">
+                        <label for="souvenirs-budget" class="upper text-primary">Souvenirs & Other Expenditures (per day): £</label>
+                        <input type="text" id="souvenirs-budget" name="souvenirs-budget" min="0" value="0" placeholder="0.00">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-            <div class="card">
-                <h2 class="upper text-primary">Lifestyle</h2>
-            
-                <fieldset class="form-section">
-                    <legend class="upper text-primary">Food Budget (per day per person):</legend>
-                    <div class="row-container mg-b">
-                        <div class="radio-button">
-                            <input type="radio" id="food-low" name="food" value="low">
-                            <label for="food-low" class="upper">Low</label>
-                        </div>
-                        <div class="radio-button">
-                            <input type="radio" id="food-medium" name="food" value="medium">
-                            <label for="food-medium" class="upper">Medium</label>
-                        </div>
-                        <div class="radio-button">
-                            <input type="radio" id="food-high" name="food" value="high">
-                            <label for="food-high" class="upper">High</label> 
-                        </div>
-                    </div>
-                    <div class="radio-button" id="custom">
-                        <input type="radio" id="food-custom" name="food" value="custom" placeholder="0.00">
-                        <label for="food-custom" class="upper">Custom: ~£</label>
-                        <input type="text" id="food-custom-amount" name="food-custom-amount">
-                    </div>
-                </fieldset>
-            
-                <div class="form-section" id="others">
-                    <label for="souvenirs-budget" class="upper text-primary">Souvenirs & Other Expenditures (per day): £</label>
-                    <input type="text" id="souvenirs-budget" name="souvenirs-budget" min="0" value="0" placeholder="0.00">
-                </div>
-            </div>
         
-            <button type="submit" class="upper bg-accent text-primary" id="calculate-button">Calculate Cost</button>
+                <button type="submit" class="upper bg-accent text-primary" id="calculate-button">Calculate Cost</button>
         
-        </form>
+            </form>
 
 <!-- ------------RESULTS -->
-        <div class="results">
+            <div class="results">
 
-        </div>
-    </main>
+            </div>
+        </main>
     <footer>
         1
     </footer>
+    
 </div>
 <!-- ----------------------------------------------SCRIPTS -->
 
