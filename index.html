@@ -10,8 +10,11 @@
     <meta name="keywords" content="travel, budget, cost calculator, trip planner, vacation, flight, accommodation, activities">
     <meta name="author" content="Jawdan Angelos"> 
     <script src="https://kit.fontawesome.com/dc0cc4ba0e.js" crossorigin="anonymous"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>CostCrusader - Conquer Your Travel Budget</title>
+
 </head>
 
 <!-- ----------------------------------------------BODY -->
@@ -82,6 +85,11 @@
                     <div class="form-section">
                         <label for="to" class="upper text-primary">To:</label>
                         <input type="text" id="to" name="to" placeholder="Enter your destination">
+                    </div>
+                    <div class="gmaps-container">
+                        <gmp-map center="40.12150192260742,-100.45039367675781" zoom="4" map-id="DEMO_MAP_ID">
+                            <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
+                        </gmp-map>
                     </div>
                 </div>
 
