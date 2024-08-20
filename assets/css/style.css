@@ -122,9 +122,9 @@ h3 {
     font-size: 2.5rem;
     background-color: #8800009d;
     border: 15px;
-    width:fit-content;
+    width: 90%;
     border-radius: 25px;
-    margin-bottom: 1.5rem;
+    margin: 1.8rem;
     padding: 0.5rem;
 }
 
@@ -270,7 +270,7 @@ main {
 
 
 .card {
-    margin-top: 2rem;
+    margin-top: 3rem;
     background-color: #c0392b;
     padding: 2rem;
     border-radius: 25px;
@@ -383,6 +383,10 @@ footer {
     margin: 0;
 }
 
+#date-inputs {
+    width: 90%;
+}
+
 #trip-type-section {
     margin-top: 3rem;
 }
@@ -393,7 +397,7 @@ footer {
 }
 
 .form-section {
-    margin-top: 3rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -466,8 +470,10 @@ footer {
     border: 1px solid black;
 }
 
+/* Google Maps API */
+
 .gmaps-container {
-    width: 300px;
+    width: 100%;
     height: 300px;
     padding-bottom: 1rem;
 }
@@ -476,6 +482,22 @@ gmap-map {
     height: 300px;
     width: 300px;
 }
+
+/*Places Autosearch API */
+
+#place-picker-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+#place-picker-container {
+    text-align: left;
+    width: 100%;
+}
+
+
 
 /* Media query for tablets */
 @media (max-width: 900px) {

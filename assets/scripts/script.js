@@ -21,9 +21,9 @@ function toggleBudgetForm(haveBudget) {
         const budgetValue = parseFloat(budgetInput.value);
 
         if (!isNaN(budgetValue) && budgetValue > 0) {
-            budgetText.textContent = `Budget: £${budgetValue.toFixed(2)}`; 
+            budgetText.textContent = `Budget: £${budgetValue.toFixed(2)}`;
         } else {
-            budgetText.textContent = 'Please enter a valid budget.'; 
+            budgetText.textContent = 'Please enter a valid budget.';
         }
     } else {
         budgetText.textContent = 'Travel Cost Calculator';
@@ -38,7 +38,7 @@ noBudgetBtn.addEventListener('click', () => toggleBudgetForm(false));
  * Checks if round trip is checked and if true, shows the return date input box.
  */
 const tripTypeShowReturn = () => {
-    tripTypeSingle.checked ? returnDateInput.style.display = 'none': returnDateInput.style.display = 'block';
+    tripTypeSingle.checked ? returnDateInput.style.display = 'none' : returnDateInput.style.display = 'block';
 }
 
 tripTypeSingle.addEventListener('change', tripTypeShowReturn);
@@ -56,18 +56,68 @@ function handleTravelModeChange() {
  * Function to calculate the fuel cost (if car travel mode is selected)
  */
 function calculateFuelCost() {
-   
+
 }
 /**
  * Function to calculate the total trip cost
  */
 function calculateTripCost() {
-   
+
 }
 
 /**
  * Function to display the results
  */
 function displayResults(totalCost) {
-    
+
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Get references to the input fields and map elements
+    const fromInput = document.getElementById('from');
+    const toInput = document.getElementById('to');
+    const fromMap = document.querySelector('.gmaps-container gmp-map');
+    const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1]; 
+
+    // Your Google Maps API key
+    const googleMapsApiKey = 'AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg';
+
+    // Function to update the map center based on the address in the input
+    function updateMapFromAddress(addressInput, map) {
+        const address = addressInput.value;
+
+        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${googleMapsApiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'OK') {
+                    const location = data.results[0].geometry.location;
+                    map.center = { lat: location.lat, lng: location.lng };
+                    map.zoom = 12;
+                } else {
+                    console.error('Geocode was not successful for the following reason: ' + data.status);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching geocoding data:', error);
+            });
+    }
+
+    // Add event listeners to the input fields (using keydown for Enter key press)
+    fromInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent page refresh on Enter
+            updateMapFromAddress(fromInput, fromMap);
+        }
+    });
+
+
+    toInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent page refresh on Enter
+            updateMapFromAddress(toInput, toMap);
+        }
+    });
+});
