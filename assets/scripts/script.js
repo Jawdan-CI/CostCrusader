@@ -74,13 +74,13 @@ function displayResults(totalCost) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Get references to the input fields and map elements
+    const fromSelectButton = document.getElementById('fromSelect');
+    const toSelectButton = document.getElementById('toSelect');
     const fromInput = document.getElementById('from');
     const toInput = document.getElementById('to');
     const fromMap = document.querySelector('.gmaps-container gmp-map');
-    const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1]; 
+    const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1];
 
-    // Your Google Maps API key
     const googleMapsApiKey = 'AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg';
 
     // Function to update the map center based on the address in the input
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.status === 'OK') {
                     const location = data.results[0].geometry.location;
                     map.center = { lat: location.lat, lng: location.lng };
-                    map.zoom = 12;
+                    map.zoom = 8;
                 } else {
                     console.error('Geocode was not successful for the following reason: ' + data.status);
                 }
@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Add event listeners to the input fields (using keydown for Enter key press)
     fromInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent page refresh on Enter
@@ -116,8 +115,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent page refresh on Enter
+            event.preventDefault();
             updateMapFromAddress(toInput, toMap);
         }
+    });
+
+    fromSelectButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        updateMapFromAddress(fromInput, fromMap);
+    });
+
+    toSelectButton.addEventListener('click', (event) => {
+        event.preventDefault(); //
+        updateMapFromAddress(toInput, toMap);
     });
 });
