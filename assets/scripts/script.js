@@ -3,10 +3,35 @@ const tripTypeSingle = document.getElementById('trip-type-single');
 const tripTypeRound = document.getElementById('trip-type-round');
 const returnDateInput = document.getElementById('return-date-input');
 
+
+const tripForm = document.getElementById('trip-form')
+const mainForm = document.getElementById('toggleForm')
+const budgetBtn = document.getElementById('yes-budget-btn');
+const noBudgetBtn = document.getElementById('no-budget-btn');
+const budgetDisplay = document.getElementById('budget-display');
+const budgetText = document.getElementById('budget-text');
+
 // Function to show or hide the budget form 
-function toggleBudgetForm() {
-    
+function toggleBudgetForm(haveBudget) {
+    tripForm.classList.add('hidden');
+    mainForm.classList.remove('hidden');
+
+    if (haveBudget) {
+        const budgetInput = document.getElementById('budget');
+        const budgetValue = parseFloat(budgetInput.value);
+
+        if (!isNaN(budgetValue) && budgetValue > 0) {
+            budgetText.textContent = `Budget: £${budgetValue.toFixed(2)}`; 
+        } else {
+            budgetText.textContent = 'Please enter a valid budget.'; 
+        }
+    } else {
+        budgetText.textContent = 'Travel Cost Calculator';
+    }
 }
+
+budgetBtn.addEventListener('click', () => toggleBudgetForm(true));
+noBudgetBtn.addEventListener('click', () => toggleBudgetForm(false));
 
 
 /**
@@ -22,35 +47,10 @@ tripTypeRound.addEventListener('change', tripTypeShowReturn);
 tripTypeShowReturn();
 
 /**
- * Function to handle the "Yes" button click in the budget form 
- *  */ 
-function handleYesBudgetClick() {
-    
-}
-/**
- * 
- * Function to handle the "No" button click in the budget form
- */
-function handleNoBudgetClick() {
-  
-}
-/**
- * Function to update the budget display
- */ 
-function updateBudgetDisplay() {
-   
-}
-/**
- * Function to handle the change in trip type (single or round trip) 
- */
-function handleTripTypeChange() {
-  
-}
-/**
  * Function to handle the change in travel mode (flight, train, car) 
  */
 function handleTravelModeChange() {
-   
+
 }
 /**
  * Function to calculate the fuel cost (if car travel mode is selected)
@@ -71,9 +71,3 @@ function calculateTripCost() {
 function displayResults(totalCost) {
     
 }
-/**
- * Event listeners and initializations
- */
-document.addEventListener('DOMContentLoaded', () => {
-  
-});

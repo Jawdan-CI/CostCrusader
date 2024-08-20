@@ -26,7 +26,7 @@
     
         <main>
 <!-- Choose Your Budget Form -->
-        <form id="trip-form" class="hidden bg-secondary">
+        <form id="trip-form" class="bg-secondary">
             <label for="budget" class="upper text-primary">Travel Budget:</label>
             <br><span class="sign text-primary">£ </span><input type="text" id="budget" name="budget" placeholder="00.00" required>
             <br>
@@ -36,12 +36,14 @@
             <button type="button" id="no-budget-btn" class="upper text-primary">No Budget</button>
         </form>
 
-        
+        <div id="toggleForm" class="hidden">
 
 <!-- ------------MAIN FORM -->
             <form id="main-form">
                     
-                <div id="budget-display" class="text-primary"></div> 
+                <div id="budget-display" class="text-primary">
+                    <h1 id="budget-text"></h1>
+                </div> 
 
                 <div class="card">
                     <h2 class="upper text-primary">Destinations</h2>
@@ -49,11 +51,11 @@
                         <h3 class="upper text-primary">Trip Type</h3>
                         <div class="row-container">
                             <div class="radio-button">
-                                <input type="radio" name="trip-type" id="trip-type-single" value="single" placeholder="Enter your Start Point" checked>
+                                <input type="radio" name="trip-type" id="trip-type-single" value="single" checked>
                                 <label for="trip-type-single" class="upper">Single Trip</label>
                             </div>
                             <div class="radio-button">
-                                <input type="radio" name="trip-type" id="trip-type-round" value="single" placeholder="Enter your Destination">
+                                <input type="radio" name="trip-type" id="trip-type-round" value="single">
                                 <label for="trip-type-round" class="upper">Round Trip</label>
                             </div>
                         </div>
@@ -70,9 +72,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                        
-                    <div id="date-inputs">
                     </div>
                     <div class="form-section">
                         <h3 class="upper text-primary">Where</h3>
@@ -197,9 +196,9 @@
                             </div>
                         </div>
                         <div class="radio-button" id="custom">
-                            <input type="radio" id="food-custom" name="food" value="custom" placeholder="0.00">
+                            <input type="radio" id="food-custom" name="food" value="custom">
                             <label for="food-custom" class="upper">Custom: ~£</label>
-                            <input type="text" id="food-custom-amount" name="food-custom-amount">
+                            <input type="text" id="food-custom-amount" name="food-custom-amount" placeholder="0.00">
                         </div>
                     </fieldset>
                 
@@ -208,11 +207,9 @@
                         <input type="text" id="souvenirs-budget" name="souvenirs-budget" min="0" value="0" placeholder="0.00">
                     </div>
                 </div>
-        
                 <button type="submit" class="upper bg-accent text-primary" id="calculate-button">Calculate Cost</button>
-        
             </form>
-
+        </div>
 <!-- ------------RESULTS -->
             <div class="results">
 
