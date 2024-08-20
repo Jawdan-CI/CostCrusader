@@ -293,6 +293,22 @@ main {
     padding: 2rem 2rem;
 }
 
+.inputs-area {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#fromSelect {
+    background-color: white;
+    width: 10%;
+}
+
+#toSelect {
+    background-color: white;
+    width: 10%;
+}
+
 #main-form label {
     display: block; 
     margin-bottom: 0.5rem;
