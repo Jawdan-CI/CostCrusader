@@ -293,11 +293,6 @@ main {
     padding: 2rem 2rem;
 }
 
-.inputs-area {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
 
 #fromSelect {
     background-color: white;
