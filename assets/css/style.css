@@ -220,7 +220,6 @@ main {
     font-size: 4rem;
     font-family: Montserrat;
     font-weight: 900;
-    font-stretch: wider;
 }
 
 #trip-form > input {
@@ -240,7 +239,6 @@ main {
     font-size: 4rem;
     font-family: 'Montserrat';
     font-weight: 900;
-    font-stretch: wider;
 }
 
 #trip-form > p {
@@ -390,7 +388,6 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     color: white;
-    background-color: none;
     padding: 1rem 1.5rem 1.5rem 1.5rem;
     border-radius: 15px;
     margin-top: 0.5rem;
