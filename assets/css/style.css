@@ -291,6 +291,7 @@ main {
     margin-bottom: 1.5rem; 
     color: #34495e;
     padding: 2rem 2rem;
+    border: 1px solid white;
 }
 
 
@@ -364,7 +365,7 @@ legend {
 
 footer {
     position: relative;
-    top: 2000px;
+    top: 100px;
     bottom: 0;
     left: 0;
     height: 10vh;
@@ -503,7 +504,7 @@ gmap-map {
 
 /*Places Autosearch API */
 
-#place-picker-box {
+/* #place-picker-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -513,9 +514,20 @@ gmap-map {
 #place-picker-container {
     text-align: left;
     width: 100%;
+} */
+
+#results > p {
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    border: 3px solid white;
+    text-align: center;
+    padding: 2rem;
 }
 
-
+#results > h3 {
+    color: white;
+}
 
 /* Media query for tablets */
 @media (max-width: 900px) {
