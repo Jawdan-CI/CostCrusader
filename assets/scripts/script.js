@@ -17,6 +17,9 @@ const toInput = document.getElementById('to');
 const fromMap = document.querySelector('.gmaps-container gmp-map');
 const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1];
 
+let fromLocation = null;
+let toLocation = null;
+
 const travelersInput = document.getElementById('travelers');
 const travelModeFlight = document.getElementById('travel-mode-flight');
 const travelModeTrain = document.getElementById('travel-mode-train');
@@ -142,8 +145,38 @@ document.addEventListener('DOMContentLoaded', () => {
         if (travelModeCar.checked) {
             const fuelCalculator = document.getElementById('fuel-calculator');
             fuelCalculator.style.display = 'block';
+
+            // Get references to the input fields within the fuel calculator
+            const distanceInput = document.getElementById('distance');
+            const mpgInput = document.getElementById('mpg');
+            const fuelPriceInput = document.getElementById('fuel-price');
+            const fuelCostResult = document.getElementById('fuel-cost-result');
+
+            // Add event listeners to the input fields to trigger calculation on change
+            distanceInput.addEventListener('input', calculateFuelCost);
+            mpgInput.addEventListener('input', calculateFuelCost);
+            fuelPriceInput.addEventListener('input', calculateFuelCost);
+
+            // Function to calculate and display fuel cost
+            function calculateFuelCost() {
+                const distance = parseFloat(distanceInput.value) || 0;
+                const mpg = parseFloat(mpgInput.value) || 0;
+                const fuelPrice = parseFloat(fuelPriceInput.value) || 0;
+
+                if (mpg === 0) {
+                    fuelCostResult.textContent = 'Please enter a valid MPG.';
+                    return;
+                }
+
+                const gallonsNeeded = distance / mpg;
+                const litresNeeded = gallonsNeeded * 3.78541; // Convert gallons to litres
+                const totalFuelCost = litresNeeded * fuelPrice;
+
+                fuelCostResult.textContent = `Estimated Fuel Cost: £${totalFuelCost.toFixed(2)}`;
+            }
         }
     }
+
 
     travelModeFlight.addEventListener('change', handleFlightSelection);
     travelModeTrain.addEventListener('change', handleTrainSelection);
@@ -168,6 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to update the map center based on the address in the input
     function updateMapFromAddress(addressInput, map) {
         const address = addressInput.value;
+        console.log(address);
 
         const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${googleMapsApiKey}`;
 
@@ -178,6 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const location = data.results[0].geometry.location;
                     map.center = { lat: location.lat, lng: location.lng };
                     map.zoom = 5;
+
+                    if (map === fromMap) {
+                        fromLocation = location;
+                    } else if (map === toMap) {
+                        toLocation = location;
+                    }
                 } else {
                     console.error('Geocode was not successful for the following reason: ' + data.status);
                 }

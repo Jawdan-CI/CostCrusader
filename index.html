@@ -53,7 +53,7 @@
                 <div id="budget-display" class="text-primary">
                     <h1 id="budget-text"></h1>
                 </div>
-<!-- ***********************************************DESTINATIONS CARD -->
+                <!-- ***********************************************DESTINATIONS CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Destinations</h2>
                     <div class="form-section">
@@ -82,12 +82,13 @@
                             </div>
                         </div>
                     </div>
-<!-- ******************WHERE AND GMAPS -->
+                    <!-- ******************WHERE AND GMAPS -->
                     <div class="form-section">
                         <h3 class="upper text-primary">Where</h3>
                         <label for="from" class="upper text-primary">From:</label>
                         <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
-                            <input type="text" id="from" name="from" placeholder="Enter your starting point" autocomplete="off">
+                            <input type="text" id="from" name="from" placeholder="Enter your starting point"
+                                autocomplete="off">
                             <button id="fromSelect">GO</button>
                         </div>
                     </div>
@@ -103,18 +104,20 @@
                     <div class="form-section">
                         <label for="to" class="upper text-primary">To:</label>
                         <div style=" display: flex; flex-direction: column; width: 100%; align-items: center;">
-                            <input type="text" id="to" name="to" placeholder="Enter your Destination!" autocomplete="off">
+                            <input type="text" id="to" name="to" placeholder="Enter your Destination!"
+                                autocomplete="off">
                             <button id="toSelect">GO</button>
                         </div>
                     </div>
 
                     <div class="gmaps-container">
                         <gmp-map center="3.150075, 101.694454" zoom="4" map-id="DEMO_MAP_ID">
-                            <gmp-advanced-marker position="3.150075, 101.694454" title="My location"></gmp-advanced-marker>
+                            <gmp-advanced-marker position="3.150075, 101.694454"
+                                title="My location"></gmp-advanced-marker>
                         </gmp-map>
                     </div>
                 </div>
-<!-- ********************************************** TRANSPORT CARD -->
+                <!-- ********************************************** TRANSPORT CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Transport</h2>
 
@@ -153,9 +156,26 @@
                     </div>
 
                     <div id="fuel-calculator" style="display: none;">
+                        <div class="form-section">
+                            <label for="distance" class="upper text-primary">Distance (miles):</label>
+                            <input type="number" id="distance" name="distance" min="0" value="0">
+                        </div>
+
+                        <div class="form-section">
+                            <label for="mpg" class="upper text-primary">Vehicle MPG:</label>
+                            <input type="number" id="mpg" name="mpg" min="0" value="0">
+                        </div>
+
+                        <div class="form-section">
+                            <label for="fuel-price" class="upper text-primary">Fuel Price (per litre): £</label>
+                            <input type="number" id="fuel-price" name="fuel-price" min="0" value="0" step="0.01">
+                        </div>
+
+                        <div id="fuel-cost-result"></div>
                     </div>
                 </div>
-<!-- **********************************************ACOMMODIATIONS CARD -->
+
+                <!-- **********************************************ACOMMODIATIONS CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Accommodation</h2>
                     <div class="form-section">
@@ -206,7 +226,7 @@
                     </div>
                 </div>
 
-<!-- ***********************************************LIFESTYLE CARD -->
+                <!-- ***********************************************LIFESTYLE CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Lifestyle</h2>
 
@@ -232,7 +252,7 @@
                             <input type="text" id="food-custom-amount" name="food-custom-amount" placeholder="0.00">
                         </div>
                     </fieldset>
-<!-- ***********************************************OTHER OR SOUVENIRS CARD -->
+                    <!-- ***********************************************OTHER OR SOUVENIRS CARD -->
                     <div class="form-section" id="others">
                         <label for="souvenirs-budget" class="upper text-primary">Souvenirs & Other Expenditures (per
                             day): £</label>
@@ -256,4 +276,5 @@
     <script src="assets/scripts/script.js"></script>
 
 </body>
+
 </html>
