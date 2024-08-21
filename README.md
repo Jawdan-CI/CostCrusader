@@ -3,6 +3,8 @@
 
 CostCrusader is your trusty companion for planning travel budgets. This web application helps you estimate the cost of your adventures, taking into account various factors such as destination, travel dates, accommodation, activities, and more. *This web application is made as part of an individual JS Project*. 
 
+***Note: this app is still in Development. However it demonstrates Key HTML, CSS, JS Knowledge efficiently. And I have decided to extend and further enhance this project in my own time so I can add more API's and advanced Calculations. SEE: [Future Enhancements](#future-enhancements)***
+
 ## Table of Contents
 
 * [Target Audience](#target-audience)
