@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.status === 'OK') {
                     const location = data.results[0].geometry.location;
                     map.center = { lat: location.lat, lng: location.lng };
-                    map.zoom = 8;
+                    map.zoom = 5;
                 } else {
                     console.error('Geocode was not successful for the following reason: ' + data.status);
                 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- ----------------------------------------------HEAD / LINKS -->
+<!-- ************************************************************************HEAD / LINKS -->
 
 <head>
     <meta charset="UTF-8">
@@ -22,15 +22,15 @@
 
 </head>
 
-<!-- ----------------------------------------------BODY -->
+<!-- ************************************************************************BODY -->
 
 <body>
-    <!-- ------------HEADER -->
+    <!-- ************************************HEADER -->
     <header class="bg-primary">
         <h4 class="logo text-primary">CostCrusader</h1>
             <span class="muted">Plan your dream trip whatever the cost!</span>
     </header>
-    <!-- ------------MAIN CONTENT -->
+    <!-- ******************MAIN CONTENT -->
 
     <main>
         <!-- Choose Your Budget Form -->
@@ -47,13 +47,13 @@
 
         <div id="toggleForm" class="hidden">
 
-            <!-- ------------MAIN FORM -->
+            <!-- ******************MAIN FORM -->
             <form id="main-form">
 
                 <div id="budget-display" class="text-primary">
                     <h1 id="budget-text"></h1>
                 </div>
-
+<!-- ***********************************************DESTINATIONS CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Destinations</h2>
                     <div class="form-section">
@@ -82,11 +82,12 @@
                             </div>
                         </div>
                     </div>
+<!-- ******************WHERE AND GMAPS -->
                     <div class="form-section">
                         <h3 class="upper text-primary">Where</h3>
                         <label for="from" class="upper text-primary">From:</label>
-                        <div style="display: flex; flex-direction: row; width: 100%;">
-                            <input type="text" id="from" name="from" placeholder="Enter your starting point">
+                        <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
+                            <input type="text" id="from" name="from" placeholder="Enter your starting point" autocomplete="off">
                             <button id="fromSelect">GO</button>
                         </div>
                     </div>
@@ -101,8 +102,8 @@
 
                     <div class="form-section">
                         <label for="to" class="upper text-primary">To:</label>
-                        <div style="display: flex; flex-direction: row; width: 100%;">
-                            <input type="text" id="to" name="to" placeholder="Enter your Destination!">
+                        <div style=" display: flex; flex-direction: column; width: 100%; align-items: center;">
+                            <input type="text" id="to" name="to" placeholder="Enter your Destination!" autocomplete="off">
                             <button id="toSelect">GO</button>
                         </div>
                     </div>
@@ -112,7 +113,8 @@
                             <gmp-advanced-marker position="3.150075, 101.694454" title="My location"></gmp-advanced-marker>
                         </gmp-map>
                     </div>
-
+                </div>
+<!-- ********************************************** TRANSPORT CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Transport</h2>
 
@@ -153,7 +155,7 @@
                     <div id="fuel-calculator" style="display: none;">
                     </div>
                 </div>
-
+<!-- **********************************************ACOMMODIATIONS CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Accommodation</h2>
                     <div class="form-section">
@@ -204,7 +206,7 @@
                     </div>
                 </div>
 
-
+<!-- ***********************************************LIFESTYLE CARD -->
                 <div class="card">
                     <h2 class="upper text-primary">Lifestyle</h2>
 
@@ -230,7 +232,7 @@
                             <input type="text" id="food-custom-amount" name="food-custom-amount" placeholder="0.00">
                         </div>
                     </fieldset>
-
+<!-- ***********************************************OTHER OR SOUVENIRS CARD -->
                     <div class="form-section" id="others">
                         <label for="souvenirs-budget" class="upper text-primary">Souvenirs & Other Expenditures (per
                             day): £</label>
@@ -241,7 +243,7 @@
                 <button type="submit" class="upper bg-accent text-primary" id="calculate-button">Calculate Cost</button>
             </form>
         </div>
-        <!-- ------------RESULTS -->
+        <!-- *****************RESULTS -->
         <div class="results">
 
         </div>
@@ -251,7 +253,7 @@
     </footer>
 
     </div>
-    <!-- ----------------------------------------------SCRIPTS -->
+    <!-- ************************************************************************SCRIPTS -->
 
     <script src="assets/scripts/script.js"></script>
 </body>
