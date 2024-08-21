@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fuelPriceInput = document.getElementById('fuel-price');
             const fuelCostResult = document.getElementById('fuel-cost-result');
 
-            // Add event listeners to the input fields to trigger calculation on change
+
             distanceInput.addEventListener('input', calculateFuelCost);
             mpgInput.addEventListener('input', calculateFuelCost);
             fuelPriceInput.addEventListener('input', calculateFuelCost);
