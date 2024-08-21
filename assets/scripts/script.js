@@ -25,8 +25,6 @@ const travelModeFlight = document.getElementById('travel-mode-flight');
 const travelModeTrain = document.getElementById('travel-mode-train');
 const travelModeCar = document.getElementById('travel-mode-car');
 
-const googleMapsApiKey = 'AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg';
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---------------------FRONT PAGE FUNCTIONALITY
