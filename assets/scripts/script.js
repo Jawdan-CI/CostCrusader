@@ -12,8 +12,8 @@ const budgetText = document.getElementById('budget-text');
 
 const fromSelectButton = document.getElementById('fromSelect');
 const toSelectButton = document.getElementById('toSelect');
-const fromInput = document.getElementById('from');
-const toInput = document.getElementById('to');
+let fromInput;
+let toInput;
 const fromMap = document.querySelector('.gmaps-container gmp-map');
 const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1];
 
@@ -25,7 +25,26 @@ const travelModeFlight = document.getElementById('travel-mode-flight');
 const travelModeTrain = document.getElementById('travel-mode-train');
 const travelModeCar = document.getElementById('travel-mode-car');
 
+let address;
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    async function makeInputs() {
+        await google.maps.importLibrary("places");
+        const placeAutocompleteFrom = new google.maps.places.PlaceAutocompleteElement();
+        const placeAutocompleteTo = new google.maps.places.PlaceAutocompleteElement();
+        const inputFrom = document.getElementById('input-from');
+        const inputTo = document.getElementById('input-to');
+    
+        inputFrom.appendChild(placeAutocompleteFrom);
+        inputTo.appendChild(placeAutocompleteTo);
+
+        fromInput = placeAutocompleteFrom;
+        toInput = placeAutocompleteTo;
+
+    }
+    
+    makeInputs();
 
     // ---------------------FRONT PAGE FUNCTIONALITY
 
@@ -195,13 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayResults(totalCost) {
 
     }
-
     // Function to update the map center based on the address in the input
     function updateMapFromAddress(addressInput, map) {
         const address = addressInput.value;
-        console.log(address);
 
-        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${googleMapsApiKey}`;
+        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg`;
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -224,6 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching geocoding data:', error);
             });
     }
+
+    mainForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+    });
+
 
     fromInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
@@ -250,3 +272,5 @@ document.addEventListener('DOMContentLoaded', () => {
         updateMapFromAddress(toInput, toMap);
     });
 });
+
+console.log(address);
