@@ -1,7 +1,10 @@
+
+//Trip Type Select
 const tripTypeSingle = document.getElementById('trip-type-single');
 const tripTypeRound = document.getElementById('trip-type-round');
 const returnDateInput = document.getElementById('return-date-input');
 
+// Budget Form / Trip Form Switch
 const tripForm = document.getElementById('trip-form')
 const mainForm = document.getElementById('toggleForm')
 const resultsDiv = document.getElementById('results');
@@ -10,16 +13,17 @@ const noBudgetBtn = document.getElementById('no-budget-btn');
 const budgetDisplay = document.getElementById('budget-display');
 const budgetText = document.getElementById('budget-text');
 
-const fromSelectButton = document.getElementById('fromSelect');
-const toSelectButton = document.getElementById('toSelect');
-let fromInput;
-let toInput;
-const fromMap = document.querySelector('.gmaps-container gmp-map');
-const toMap = document.querySelectorAll('.gmaps-container gmp-map')[1];
+// Destinations GMAPs and AutoComplete
 
-let fromLocation = null;
-let toLocation = null;
+//const fromSelectButton = document.getElementById('fromSelect');
+//const toSelectButton = document.getElementById('toSelect');
 
+let fromMap, toMap;
+var map;
+var service;
+var infowindow;
+
+//Travel Mode Selection
 const travelersInput = document.getElementById('travelers');
 const travelModeFlight = document.getElementById('travel-mode-flight');
 const travelModeTrain = document.getElementById('travel-mode-train');
@@ -28,23 +32,6 @@ const travelModeCar = document.getElementById('travel-mode-car');
 let address;
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    async function makeInputs() {
-        await google.maps.importLibrary("places");
-        const placeAutocompleteFrom = new google.maps.places.PlaceAutocompleteElement();
-        const placeAutocompleteTo = new google.maps.places.PlaceAutocompleteElement();
-        const inputFrom = document.getElementById('input-from');
-        const inputTo = document.getElementById('input-to');
-    
-        inputFrom.appendChild(placeAutocompleteFrom);
-        inputTo.appendChild(placeAutocompleteTo);
-
-        fromInput = placeAutocompleteFrom;
-        toInput = placeAutocompleteTo;
-
-    }
-    
-    makeInputs();
 
     // ---------------------FRONT PAGE FUNCTIONALITY
 
@@ -215,32 +202,76 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     // Function to update the map center based on the address in the input
-    function updateMapFromAddress(addressInput, map) {
-        const address = addressInput.value;
-
-        const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=AIzaSyA8E7zGJjH1l_l95SNHh14d9shdWxzuYxg`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'OK') {
-                    const location = data.results[0].geometry.location;
-                    map.center = { lat: location.lat, lng: location.lng };
-                    map.zoom = 5;
-
-                    if (map === fromMap) {
-                        fromLocation = location;
-                    } else if (map === toMap) {
-                        toLocation = location;
-                    }
-                } else {
-                    console.error('Geocode was not successful for the following reason: ' + data.status);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching geocoding data:', error);
-            });
-    }
+    async function initMap() {
+        // Locations
+        const fromPosition = { lat: -25.344, lng: 131.031 }; // Uluru
+        const toPosition = { lat: 51.5074, lng: 0.1278 }; // London (example)
+      
+        // Request needed libraries.
+        //@ts-ignore
+        const { Map } = await google.maps.importLibrary("maps");
+        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+      
+        // The fromMap, centered at fromPosition
+        fromMap = new Map(document.getElementById("fromMap"), {
+          zoom: 4,
+          center: fromPosition,
+          mapId: "DEMO_MAP_ID",
+        });
+      
+        // The toMap, centered at toPosition
+        toMap = new Map(document.getElementById("toMap"), {
+          zoom: 4,
+          center: toPosition,
+          mapId: "DEMO_MAP_ID",
+        });
+      
+        // Markers
+        let fromMarker = new AdvancedMarkerElement({
+          map: fromMap,
+          position: fromPosition,
+          title: "Uluru",
+        });
+      
+        let toMarker = new AdvancedMarkerElement({
+          map: toMap,
+          position: toPosition,
+          title: "London",
+        });
+      
+        //Request AutoComplete
+        const { Autocomplete } = await google.maps.importLibrary("places");
+      
+        //retrieve inputs
+        const fromSearchField = document.getElementById("fromSearchField");
+        const toSearchField = document.getElementById("toSearchField");
+      
+        const fromAutocomplete = new Autocomplete(fromSearchField);
+        const toAutocomplete = new Autocomplete(toSearchField);
+      
+        fromAutocomplete.addListener("place_changed", () => {
+          const place = fromAutocomplete.getPlace();
+          if (place.geometry && place.geometry.location) {
+            fromMap.setCenter(place.geometry.location);
+            fromMap.setZoom(12); // Adjust zoom as needed
+      
+            fromMarker.position = place.geometry.location;
+          }
+        });
+      
+        toAutocomplete.addListener("place_changed", () => {
+          const place = toAutocomplete.getPlace();
+          if (place.geometry && place.geometry.location) {
+            toMap.setCenter(place.geometry.location);
+            toMap.setZoom(12); // Adjust zoom as needed
+      
+            toMarker.position = place.geometry.location;
+          }
+        });
+      
+      }
+      
+      initMap();
 
     mainForm.addEventListener('submit', (event) => {
         event.preventDefault();
