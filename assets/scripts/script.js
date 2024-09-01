@@ -29,8 +29,6 @@ const travelModeFlight = document.getElementById('travel-mode-flight');
 const travelModeTrain = document.getElementById('travel-mode-train');
 const travelModeCar = document.getElementById('travel-mode-car');
 
-let address;
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---------------------FRONT PAGE FUNCTIONALITY
@@ -292,16 +290,4 @@ document.addEventListener('DOMContentLoaded', () => {
             updateMapFromAddress(toInput, toMap);
         }
     });
-
-    fromSelectButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        updateMapFromAddress(fromInput, fromMap);
-    });
-
-    toSelectButton.addEventListener('click', (event) => {
-        event.preventDefault(); //
-        updateMapFromAddress(toInput, toMap);
-    });
 });
-
-console.log(address);
