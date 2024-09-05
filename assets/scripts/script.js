@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             const distanceResults = document.getElementById("distanceResults");
-            distanceResults.innerText = `The distance between ${fromAddress} and ${toAddress} is approximetely ${distance.toFixed(2)} kilometers.`;
+            distanceResults.innerHTML = `The distance between<br><br><strong>${fromAddress}</strong><br>and<br><strong>${toAddress}</strong><br><br>...is approximetely<br><strong>${distance.toFixed(2)}</strong> kilometers.`;
 
         } catch (error) {
             console.error("Error calculating distance:", error);
@@ -303,6 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        const calculateDistanceButton = document.getElementById('calculateDistanceButton');
+        calculateDistanceButton.addEventListener('click', calculateDistance);
     }
 
     initMap();
